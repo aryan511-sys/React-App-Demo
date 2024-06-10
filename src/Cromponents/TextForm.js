@@ -1,11 +1,11 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react'
 export default function TextForm(props) {
-    var [text , setText] = useState("Enter your Text")
+    var [text, setText] = useState("Enter your Text")
 
     const handleOnChange = (event) => {
         // console.log("On Change");
         setText(event.target.value);
-    
+
     }
 
     const handleUpChange = () => {
@@ -25,8 +25,8 @@ export default function TextForm(props) {
         let newText = new SpeechSynthesisUtterance();
         newText.text = text;
         window.speechSynthesis.speak(newText);
-    } 
-    
+    }
+
     const clearText = () => {
         // console.log("Btn Click");
         let newText = "";
@@ -44,18 +44,18 @@ export default function TextForm(props) {
         let newText = text.split(/[ ] + /);
         setText(newText.join(" "));
     }
- 
+
     return (
         <div>
             <div className="m-5 container">
                 <h1 className="">{props.heading}</h1>
-                <textarea className="form-control" id="exampleFormControlTextarea1" rows="10" value={text} onChange={handleOnChange}></textarea>
+                <textarea className={`form-control bg-${props.mode ==="light" ? "light" : "dark"} text-${props.mode ==="light" ? "dark" : "light"}`} id="exampleFormControlTextarea1" rows="10" value={text} onChange={handleOnChange}></textarea>
                 <button className='btn btn-outline-danger mt-3' onClick={handleUpChange}>Convert To Upper Case</button>&nbsp;&nbsp;&nbsp;
                 <button className='btn btn-outline-dark mt-3' onClick={handleWithChange}>Convert To Lower Case</button>&nbsp;&nbsp;&nbsp;
                 <button className='btn btn-outline-success mt-3' onClick={handleSpeak}>Speak</button>&nbsp;&nbsp;&nbsp;
                 <button className='btn btn-outline-primary mt-3' onClick={clearText} id='clear'>Clear Text</button>&nbsp;&nbsp;&nbsp;
                 <button className='btn btn-outline-primary mt-3' onClick={handleCopy} id='clear'>Copy Text</button>&nbsp;&nbsp;&nbsp;
-                <button className='btn btn-outline-primary mt-3' onClick={handleExtra} id='clear'>Remove Extra Text</button>&nbsp;&nbsp;&nbsp;                
+                <button className='btn btn-outline-primary mt-3' onClick={handleExtra} id='clear'>Remove Extra Text</button>&nbsp;&nbsp;&nbsp;
             </div>
 
             <div className="container">

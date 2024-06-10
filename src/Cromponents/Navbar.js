@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 export default function Navbar(props) {
   return (
     <div>
-      <nav className={`navbar navbar-expand-lg bg-${props.mode} navbar-${props.mode}`}>
+      <nav className={`navbar navbar-expand-lg bg-${props.mode} navbar-${props.mode} `}>
         <div className="container-fluid">
           <a className="navbar-brand" href="#">{props.title}</a>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -23,8 +23,8 @@ export default function Navbar(props) {
               </li>
             </ul>
             <form className='d-flex' role='search'>
-            <div class="form-check form-switch">
-              <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onClick={props.toogleMode} />{props.mode}
+            <div class="form-check form-switch color">
+              <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onClick={props.toogleMode} />{props.myText}
             </div>
             </form>
           </div>
