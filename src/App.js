@@ -20,14 +20,53 @@ function App() {
       setmyText("Enable Light Mode");
     }
   }
+
+
+  const toogleMode2 = () => {
+    if (mode === 'light') {
+      setMode('dark')
+      document.body.style.background = "green"
+      document.body.style.color = "yellow"
+    } 
+    else {
+      setMode('light')
+      document.body.style.background = "white"
+      document.body.style.color = "black"
+    }
+  }
   
+  const toogleMode3 = () => {
+    if (mode === 'light') {
+      setMode('dark')
+      document.body.style.background = "red"
+      document.body.style.color = "blue"
+    } 
+    else {
+      setMode('light')
+      document.body.style.background = "white"
+      document.body.style.color = "black"
+    }
+  }
+
+  const toogleMode4 = () => {
+    if (mode === 'light') {
+      setMode('dark')
+      document.body.style.background = "cyan"
+      document.body.style.color = "darkblue"
+    } 
+    else {
+      setMode('light')
+      document.body.style.background = "white"
+      document.body.style.color = "black"
+    }
+  }
 
   const [myText , setmyText] = useState ('Enable Dark Mode');
 
   return (
   <>
-  <Navbar title = "SIT" aboutText="Abour Us" mode={mode} toogleMode={toogleMode} myText={myText}/>
-  <TextForm heading="Enter your text" mode={mode} toogleMode={toogleMode}/>
+  <Navbar title = "SIT" aboutText="Abour Us" mode={mode} toogleMode={toogleMode} myText={myText} toogleMode2={toogleMode2} toogleMode3={toogleMode3} toogleMode4={toogleMode4}/>
+  <TextForm heading="Enter your text" mode={mode} toogleMode={toogleMode} toogleMode2={toogleMode2} toogleMode3={toogleMode3} toogleMode4={toogleMode4}/>
   </>
   );
 }

@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 export default function Navbar(props) {
   return (
     <div>
-      <nav className={`navbar navbar-expand-lg bg-${props.mode} navbar-${props.mode} `}>
+      <nav className="navbar navbar-expand-lg">
         <div className="container-fluid">
           <a className="navbar-brand" href="#">{props.title}</a>
           <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -15,18 +15,35 @@ export default function Navbar(props) {
               <li className="nav-item">
                 <a className="nav-link active" aria-current="page" href="#">Home</a>
               </li>
-              <li className="nav-item">
-                <a className="nav-link" href="#">Link</a>
+              <li className="nav-item dropdown">
+                <a className="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown
+                </a>
+                <ul className="dropdown-menu">
+                  <li><a className="dropdown-item" href="#"><div class="form-check form-switch color" onClick={props.toogleMode} >
+                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" />
+                  </div>Dark Mode</a></li>
+                  <hr />
+                  <li><a className="dropdown-item" href="#" ><div class="form-check form-switch color" onClick={props.toogleMode2} >
+                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" />
+                  </div>Green Mode</a></li>
+                  <hr />
+                  <li><a className="dropdown-item" href="#" ><div class="form-check form-switch color" onClick={props.toogleMode3} >
+                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" />
+                  </div>Red Mode</a></li>
+                  <hr />
+                  <li><a className="dropdown-item" href="#" ><div class="form-check form-switch color" onClick={props.toogleMode4} >
+                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" />
+                  </div>syan Mode</a></li>
+                  <hr />
+                  <li><hr className="dropdown-divider" /></li>
+                  <li><a className="dropdown-item" href="#">Something else here</a></li>
+                </ul>
               </li>
               <li className="nav-item">
                 <a className="nav-link disabled" aria-disabled="true">{props.aboutText}</a>
               </li>
             </ul>
-            <form className='d-flex' role='search'>
-            <div class="form-check form-switch color">
-              <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onClick={props.toogleMode} />{props.myText}
-            </div>
-            </form>
           </div>
         </div>
       </nav>
