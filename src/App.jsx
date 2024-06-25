@@ -3,9 +3,10 @@ import './App.css';
 import Navbar from './Cromponents/Navbar.jsx'
 import TextForm from './Cromponents/TextForm.jsx'
 import Alert from './Cromponents/Alert.jsx';
+import Privacypolicy from './Cromponents/Privacypolicy.jsx'
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 
 function App() {
-
   const [mode , setMode] = useState('light')
 
   const [alert , setAlert] = useState(null);
@@ -17,7 +18,7 @@ function App() {
     })
     setTimeout(() =>{
       setAlert(null);
-    } , 1500)
+    } , 1500)   
   }
 
   const toogleMode = () => {
@@ -44,15 +45,28 @@ function App() {
 
   const [myText , setmyText] = useState ('લાઇટ મોડ ચાલુ છે.');
 
+  const router = createBrowserRouter([
+    {
+      path : '/Home',
+      element : <>
+      <Navbar title = "SIT" aboutText="Abour Us" mode={mode} toogleMode={toogleMode} myText={myText}/>
+     <Alert alert={alert}/>
+     <TextForm heading="Enter your text" mode={mode} toogleMode={toogleMode} showAlert={showAlert}/>
+      </>
+    },
+    {
+      path : '/Privacypolicy',
+      element : <>
+      <Privacypolicy heading="About Our Privacy Policy"/>
+      </>
+    }
+  ])
+
   return (
   <>
-  <Navbar title = "SIT" aboutText="Abour Us" mode={mode} toogleMode={toogleMode} myText={myText}/>
-  <Alert alert={alert}/>
-  <TextForm heading="Enter your text" mode={mode} toogleMode={toogleMode} showAlert={showAlert}/>
-
+  <RouterProvider />
   </>
   );
 }
 
 export default App;
-    
