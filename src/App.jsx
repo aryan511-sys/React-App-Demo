@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import './App.css';
-import Navbar from './Cromponents/Navbar.js'
-import TextForm from './Cromponents/TextForm.js'
-import Alert from './Cromponents/Alert.js';
+import Navbar from './Cromponents/Navbar.jsx'
+import TextForm from './Cromponents/TextForm.jsx'
+import Alert from './Cromponents/Alert.jsx';
 
 function App() {
 
